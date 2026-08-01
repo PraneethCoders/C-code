@@ -1,31 +1,49 @@
 // Transpose of matrix
 
-#include<stdio.h>
-#include<conio.h>
-void main({
-	int n,array[10][10];
-	
-	printf("Enter N:");
-	scanf("%d",&n);
-	printf("Enter %d*%d matrix\n",n,n);
-	for(int i=0;i<n;i++){
-		for(int j=0;j<n;j++){
-			scanf("%d\t",&array[i][j]);
-		}
-	}
-	printf("Original matrix\n");
-	for(int i=0;i<n;i++){
-		for(int j=0;j<n;j++){
-			printf("%d\t",array[i][j]);
-		}printf("\n");
-	}
-	printf("Traspose matrix\n");
-	for(int i=0;i<n;i++){
-		for(int j=0;j<n;j++){
-			printf("%d\t",array[j][i]);
-		}printf("\n");
-	}
-	
+#include <stdio.h>
+
+void readMatrix(int n, int array[10][10]) {
+    printf("Enter %d*%d matrix\n", n, n);
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            scanf("%d", &array[i][j]);
+        }
+    }
+}
+
+void printMatrix(int n, int array[10][10]) {
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            printf("%d\t", array[i][j]);
+        }
+        printf("\n");
+    }
+}
+
+void transposeMatrix(int n, int array[10][10]) {
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            printf("%d\t", array[j][i]);
+        }
+        printf("\n");
+    }
+}
+
+int main() {
+    int n, array[10][10];
+
+    printf("Enter N: ");
+    scanf("%d", &n);
+
+    readMatrix(n, array);
+
+    printf("Original matrix\n");
+    printMatrix(n, array);
+
+    printf("Transpose matrix\n");
+    transposeMatrix(n, array);
+
+    return 0;
 }
 //Output:
 //	Enter N:3
